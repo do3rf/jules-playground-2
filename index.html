@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landmark Compass</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div id="compass">
+        <div id="arrow-north">▲</div>
+    </div>
+    <div id="landmarks">
+        <!-- Landmarks will be populated by JavaScript -->
+    </div>
+
+    <template id="landmark-template">
+        <div class="landmark">
+            <div class="landmark-arrow-container">
+                <div class="landmark-arrow">▶</div>
+            </div>
+            <div class="landmark-info">
+                <div class="landmark-name"></div>
+                <div class="landmark-distance"></div>
+            </div>
+        </div>
+    </template>
+    <script src="calculations.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

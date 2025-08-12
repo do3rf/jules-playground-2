@@ -1,0 +1,14 @@
+{
+  "name": "landmark-compass-pwa",
+  "version": "1.0.0",
+  "description": "A PWA to find landmarks using device sensors.",
+  "main": "app.js",
+  "scripts": {},
+  "keywords": [
+    "pwa",
+    "compass",
+    "geolocation"
+  ],
+  "author": "Jules",
+  "license": "ISC"
+}
