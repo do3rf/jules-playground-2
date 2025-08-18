@@ -21,11 +21,24 @@ body {
     z-index: 10;
 }
 
-#arrow-north {
-    font-size: 50px;
-    color: red;
+.arrow-container {
     transform-origin: center;
     transition: transform 0.1s linear;
+}
+
+#arrow-north {
+    /* The rotation is applied here by ui.js */
+}
+
+.arrow-shape {
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.arrow-shape.north {
+    border-width: 0 15px 30px 15px;
+    border-color: transparent transparent red transparent;
 }
 
 #landmarks {
@@ -52,10 +65,12 @@ body {
 }
 
 .landmark-arrow {
-    font-size: 24px;
-    color: #007bff;
-    transform-origin: center;
-    transition: transform 0.1s linear;
+    /* The rotation is applied here by ui.js */
+}
+
+.landmark-arrow .arrow-shape {
+    border-width: 10px 0 10px 20px;
+    border-color: transparent transparent transparent #007bff;
 }
 
 .landmark-info {
