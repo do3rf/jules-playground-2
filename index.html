@@ -9,7 +9,9 @@
 </head>
 <body>
     <div id="compass">
-        <div id="arrow-north">▲</div>
+        <div id="arrow-north" class="arrow-container">
+            <div class="arrow-shape north"></div>
+        </div>
     </div>
     <div id="landmarks">
         <!-- Landmarks will be populated by JavaScript -->
@@ -18,7 +20,9 @@
     <template id="landmark-template">
         <div class="landmark">
             <div class="landmark-arrow-container">
-                <div class="landmark-arrow">▶</div>
+                <div class="landmark-arrow arrow-container">
+                    <div class="arrow-shape"></div>
+                </div>
             </div>
             <div class="landmark-info">
                 <div class="landmark-name"></div>

@@ -73,12 +73,31 @@ function startGeolocation() {
     });
 }
 
+// --- State & Smoothing ---
+let smoothedHeading = null;
+const SMOOTHING_FACTOR = 0.5; // Lower is smoother, but less responsive
+
 function handleOrientationUpdate(event) {
-    if (event.absolute === true) {
-        // The alpha value is the compass heading, but it's inverted on some devices.
-        // A value of 0 is North. We'll assume the standard behavior.
-        // For production apps, this needs more robust handling.
-        state.heading = event.alpha;
+    if (event.absolute === true && event.alpha !== null) {
+        const currentHeading = event.alpha;
+
+        if (smoothedHeading === null) {
+            smoothedHeading = currentHeading;
+        } else {
+            // Low-pass filter to smooth the heading
+            let diff = currentHeading - smoothedHeading;
+            // Handle wrap-around from 360 to 0
+            if (diff > 180) {
+                diff -= 360;
+            } else if (diff < -180) {
+                diff += 360;
+            }
+
+            smoothedHeading += SMOOTHING_FACTOR * diff;
+            smoothedHeading = (smoothedHeading + 360) % 360;
+        }
+
+        state.heading = smoothedHeading;
         updateApp();
     }
 }
