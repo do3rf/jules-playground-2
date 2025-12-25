@@ -3,35 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landmark Compass</title>
+    <title>Daily Health Tracker</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <div id="compass">
-        <div id="arrow-north" class="arrow-container">
-            <div class="arrow-shape north"></div>
-        </div>
-    </div>
-    <div id="landmarks">
-        <!-- Landmarks will be populated by JavaScript -->
-    </div>
+    <h1>Daily Health Tracker</h1>
+    <form id="health-form">
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" name="weight" step="0.1" required>
 
-    <template id="landmark-template">
-        <div class="landmark">
-            <div class="landmark-arrow-container">
-                <div class="landmark-arrow arrow-container">
-                    <div class="arrow-shape"></div>
-                </div>
-            </div>
-            <div class="landmark-info">
-                <div class="landmark-name"></div>
-                <div class="landmark-distance"></div>
-            </div>
-        </div>
-    </template>
-    <script src="calculations.js"></script>
-    <script src="ui.js"></script>
+        <label for="belly">Belly (cm)</label>
+        <input type="number" id="belly" name="belly" step="0.1" required>
+
+        <label for="exercise">Exercise (min)</label>
+        <input type="number" id="exercise" name="exercise" required>
+
+        <label for="beer">Beer (liter)</label>
+        <input type="number" id="beer" name="beer" step="0.1" required>
+
+        <label for="cigarettes">Cigarettes (number)</label>
+        <input type="number" id="cigarettes" name="cigarettes" required>
+
+        <label for="pulse">Idle pulse (pulses/min)</label>
+        <input type="number" id="pulse" name="pulse" required>
+
+        <label for="sleep">Sleep duration (hours)</label>
+        <input type="number" id="sleep" name="sleep" step="0.1" required>
+
+        <label for="mood">Mood (scale 1-10)</label>
+        <input type="number" id="mood" name="mood" min="1" max="10" required>
+
+        <label for="energy">Energy (scale 1-10)</label>
+        <input type="number" id="energy" name="energy" min="1" max="10" required>
+
+        <button type="submit">Save</button>
+    </form>
+    <div id="status"></div>
     <script src="app.js"></script>
 </body>
 </html>

@@ -1,11 +1,9 @@
-const CACHE_NAME = 'landmark-compass-cache-v1';
+const CACHE_NAME = 'health-tracker-cache-v1';
 const urlsToCache = [
   '/',
   '/index.html',
   '/style.css',
   '/app.js',
-  '/ui.js',
-  '/calculations.js',
   '/manifest.json'
 ];
 
