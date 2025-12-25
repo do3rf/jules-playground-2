@@ -1,6 +1,6 @@
 {
-  "short_name": "Landmark Compass",
-  "name": "Landmark Compass PWA",
+  "short_name": "Health Tracker",
+  "name": "Daily Health Tracker PWA",
   "icons": [
     {
       "src": "icons/icon-192x192.png",
